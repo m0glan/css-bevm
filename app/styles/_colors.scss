@@ -9,7 +9,7 @@ $gray500: #727e84;
 
 /* dark theme colors */
 
-$darkBlack800: #08090a;
+$black900: #1d2529;
 $blue200: #80bde0;
 $lightBlue200: #80c4f9;
 $red200: #e59e9e;
@@ -31,14 +31,14 @@ $themes: (
     buttonText: $white200,
   ),
   dark: (
-    bg: $darkBlack800,
+    bg: $black900,
     primary: $blue200,
     secondary: $lightBlue200,
     error: $red200,
     disabledOrHint: rgba($black300, 0.36),
     primaryText: $black50,
     secondaryText: $black200,
-    buttonText: $darkBlack800,
+    buttonText: $black900,
   ),
 );
 
