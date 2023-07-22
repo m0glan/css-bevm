@@ -2,6 +2,8 @@
 @import '_typescales';
 @import '_colors';
 
+@import 'components/button';
+
 .app {
   @include themed() {
     color: getThemeValue($primaryText);

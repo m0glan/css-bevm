@@ -23,7 +23,8 @@ $themes: (
     secondary: $lightBlue500,
     error: $red500,
     primaryText: $black500,
-    secondaryText: $gray500
+    secondaryText: $gray500,
+    buttonText: $white200,
   ),
   dark: (
     bg: $darkBlack800,
@@ -31,7 +32,8 @@ $themes: (
     secondary: $lightBlue200,
     error: $red200,
     primaryText: $black50,
-    secondaryText: $black200
+    secondaryText: $black200,
+    buttonText: $darkBlack800,
   ),
 );
 
@@ -61,3 +63,4 @@ $secondary: 'secondary';
 $error: 'error';
 $primaryText: 'primaryText';
 $secondaryText: 'secondaryText';
+$buttonText: 'buttonText';
