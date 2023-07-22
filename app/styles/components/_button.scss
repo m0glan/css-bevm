@@ -34,7 +34,7 @@
 
   &.-color-danger {
     @include themed() {
-      background-color: getThemeValue($error);
+      background-color: getThemeValue($danger);
       color: getThemeValue($bg);
     }
   }
@@ -69,8 +69,8 @@
 
   &.-color-danger {
     @include themed() {
-      border-color: getThemeValue($error);
-      color: getThemeValue($error);
+      border-color: getThemeValue($danger);
+      color: getThemeValue($danger);
     }
   }
 }
