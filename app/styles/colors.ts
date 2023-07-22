@@ -1,4 +1,5 @@
 import { Exception } from "css-bevm/helpers/exception";
+import { String } from "css-bevm/helpers/string";
 
 export type Color = 
   | 'bg' | 'background' 
@@ -10,6 +11,10 @@ export type Color =
   | 'buttonText'
 
 export function toCssModifier(color: Color | undefined) {
+  if (String.isBlank(color)) {
+    return '-color-primary';
+  }
+
   switch (color) {
     case 'bg':
     case 'background': return '-color-bg';

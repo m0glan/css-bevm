@@ -1,8 +1,9 @@
 {{page-title "CSS BEVM Demo"}}
 
 {{!-- The following component displays Ember's default welcome message. --}}
-<div class="theme theme--dark">
+<div class="{{this.theme}}">
     <div class="app">
+        <ToggleSwitch @initialState={{this.darkThemeEnabled}} @onStateChanged={{this.updateTheme}} />
         <Button @variant="contained" @color="primary" @size="medium" @text="Hello" />
     </div>
 </div>

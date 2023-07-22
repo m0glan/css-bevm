@@ -3,6 +3,7 @@
 @import '_colors';
 
 @import 'components/button';
+@import 'components/toggle-switch';
 
 .app {
   @include themed() {

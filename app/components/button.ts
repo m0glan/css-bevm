@@ -21,40 +21,40 @@ interface ButtonArgs {
  * @param {string} text - (optional) will be displayed on the button
  */
 export default class Button extends Component<ButtonArgs> {
-  _args: ButtonArgs;
+  args: ButtonArgs;
 
-  get _variant() {
-    if (String.isBlank(this._args.variant)) {
+  private get _variant() {
+    if (String.isBlank(this.args.variant)) {
       return 'btn--contained';
     }
 
-    switch (this._args.variant) {
+    switch (this.args.variant) {
       case 'contained': return 'btn--contained';
       case 'outlined': return 'btn--outlined';
-      default: Exception.throwInvalidArgument('variant', this._args.variant);
+      default: Exception.throwInvalidArgument('variant', this.args.variant);
     }
   }
 
-  get _size() {
-    if (String.isBlank(this._args.size)) {
+  private get _size() {
+    if (String.isBlank(this.args.size)) {
       return '-size-medium';
     }
 
-    switch (this._args.size) {
+    switch (this.args.size) {
       case 'medium': return '-size-medium';
       case 'large': return '-size-large';
-      default: Exception.throwInvalidArgument('size', this._args.size);
+      default: Exception.throwInvalidArgument('size', this.args.size);
     }
   }
 
-  get _color() { return colorToCssModifier(this._args.color); }
+  private get _color() { return colorToCssModifier(this.args.color); }
 
   get style() { return `btn ${this._variant} ${this._size} ${this._color}`; }
 
-  get text() { return this._args.text; }
+  get text() { return this.args.text; }
 
   constructor(owner: unknown, args: ButtonArgs) {
     super(owner, args);
-    this._args = args;
+    this.args = args;
   }
 }
