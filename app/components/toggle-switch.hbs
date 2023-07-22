@@ -1,4 +1,4 @@
 <label class="toggle-switch">
-  <Input @type="checkbox" {{on 'click' this.toggle}} @checked={{this.isOn}} />
+  <Input @type="checkbox" @checked={{this.isOn}} {{on 'change' this.toggle}} />
   <span class="{{this.toggleSwitchSliderStyle}}"></span>
 </label>

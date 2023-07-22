@@ -1,0 +1,28 @@
+$appBarHeight: 64px;
+
+.app-bar {
+  @include themed() {
+    background-color: getThemeValue($primary);
+    color: getThemeValue($bg);
+  }
+
+  height: $appBarHeight;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+
+  &__header {
+    @include headline6();
+
+    @include themed() {
+      color: getThemeValue($bg);
+    }
+
+    margin-left: 0;
+  }
+
+  &__theme-toggle {
+    float: right;
+    margin-left: auto;
+  }
+}

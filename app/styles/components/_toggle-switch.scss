@@ -1,8 +1,14 @@
+$toggleSwitchSliderWidth: 26px;
+$toggleSwitchSliderHeight: 26px;
+
+$toggleSwitchHeight: 34px;
+$toggleSwitchWidth: 60px;
+
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: $toggleSwitchWidth;
+  height: $toggleSwitchHeight;
 }
 
 .toggle-switch input {
@@ -33,8 +39,8 @@
 
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: $toggleSwitchSliderHeight;
+    width: $toggleSwitchSliderWidth;
     left: 4px;
     bottom: 4px;
     -webkit-transition: .4s;
@@ -45,12 +51,12 @@
 
 input:checked + .toggle-switch__slider {
   @include themed() {
-    background-color: getThemeValue($primary);
+    background-color: getThemeValue($secondary);
   }
 }
 
 input:checked + .toggle-switch__slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX($toggleSwitchSliderWidth);
+  -ms-transform: translateX($toggleSwitchSliderWidth);
+  transform: translateX($toggleSwitchSliderWidth);
 }

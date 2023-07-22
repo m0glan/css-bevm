@@ -12,8 +12,7 @@ interface ToggleSwitchArgs {
 export default class ToggleSwitch extends Component<ToggleSwitchArgs> {
   args: ToggleSwitchArgs;
 
-  @tracked declare private _isOn: boolean;
-  get isOn() { return this._isOn; }
+  @tracked declare isOn: boolean;
 
   private get _color() { return colorToCssModifier(this.args.color); }
 
@@ -26,17 +25,15 @@ export default class ToggleSwitch extends Component<ToggleSwitchArgs> {
     this.args = args;
 
     if (this.args.initialState == null) {
-      this._isOn = false;
+      this.isOn = false;
     } else {
-      this._isOn = this.args.initialState;
+      this.isOn = this.args.initialState;
     }
   }
 
-  @action toggle() {
-    this._isOn = !this._isOn;
-
+  @action toggle(e: any) {
     if (this.args.onStateChanged != null) {
-      this.args.onStateChanged(this.isOn);
+      this.args.onStateChanged(e.target.checked);
     }
   }
 }
