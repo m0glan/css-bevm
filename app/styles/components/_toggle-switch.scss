@@ -1,8 +1,8 @@
-$toggleSwitchSliderWidth: 26px;
-$toggleSwitchSliderHeight: 26px;
+$toggleSwitchSliderWidth: 20px;
+$toggleSwitchSliderHeight: 20px;
 
-$toggleSwitchHeight: 34px;
-$toggleSwitchWidth: 60px;
+$toggleSwitchHeight: 26px;
+$toggleSwitchWidth: 46px;
 
 .toggle-switch {
   position: relative;
@@ -22,8 +22,8 @@ $toggleSwitchWidth: 60px;
   content: "";
   height: $toggleSwitchSliderHeight;
   width: $toggleSwitchSliderWidth;
-  left: 4px;
-  bottom: 4px;
+  left: 3px;
+  bottom: 3px;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%;
