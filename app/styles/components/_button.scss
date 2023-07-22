@@ -25,21 +25,17 @@
 
   /* color modifiers */
 
-  &.-color-primary {
+  &.-color-default {
     @include themed() {
       background-color: getThemeValue($primary);
-    }
-  }
-  
-  &.-color-secondary {
-    @include themed() {
-      background-color: getThemeValue($secondary);
+      color: getThemeValue($bg);
     }
   }
 
-  &.-color-error {
+  &.-color-danger {
     @include themed() {
       background-color: getThemeValue($error);
+      color: getThemeValue($bg);
     }
   }
 
@@ -64,21 +60,14 @@
 
   /* color modifiers */
 
-  &.-color-primary {
+  &.-color-default {
     @include themed() {
       border-color: getThemeValue($primary);
       color: getThemeValue($primary);
     }
   }
 
-  &.-color-secondary {
-    @include themed() {
-      border-color: getThemeValue($secondary);
-      color: getThemeValue($secondary);
-    }
-  }
-
-  &.-color-error {
+  &.-color-danger {
     @include themed() {
       border-color: getThemeValue($error);
       color: getThemeValue($error);

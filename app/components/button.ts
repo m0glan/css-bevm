@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { Color, toCssModifier as colorToCssModifier } from 'css-bevm/styles/colors';
 import { String } from 'css-bevm/helpers/string';
 import { Exception } from 'css-bevm/helpers/exception';
 
@@ -7,17 +6,21 @@ type ButtonVariant = 'contained' | 'outlined';
 
 type ButtonSize = 'medium' | 'large';
 
+export type ButtonColor = 
+  | 'default'
+  | 'danger'
+
 interface ButtonArgs {
   variant?: ButtonVariant;
   size?: ButtonSize;
-  color?: Color;
+  color?: ButtonColor;
   text?: string;
 }
 
 /**
  * @param {ButtonVariant} variant - (optional)
  * @param {ButtonSize} size - (optional)
- * @param {Color} color - (optional)
+ * @param {ButtonColor} color - (optional)
  * @param {string} text - (optional) will be displayed on the button
  */
 export default class Button extends Component<ButtonArgs> {
@@ -47,7 +50,13 @@ export default class Button extends Component<ButtonArgs> {
     }
   }
 
-  private get _color() { return colorToCssModifier(this.args.color); }
+  private get _color() { 
+    switch (this.args.color) {
+      case 'default': return '-color-default';
+      case 'danger': return '-color-danger';
+      default: Exception.throwInvalidArgument('color', this.args.color);
+    }
+  }
 
   get style() { return `btn ${this._variant} ${this._size} ${this._color}`; }
 

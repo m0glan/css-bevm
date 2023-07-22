@@ -1,10 +1,8 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { Color, toCssModifier as colorToCssModifier } from 'css-bevm/styles/colors';
 
 interface ToggleSwitchArgs {
-  color: Color
   initialState?: boolean;
   onStateChanged: (isOn: boolean) => void
 }
@@ -14,10 +12,8 @@ export default class ToggleSwitch extends Component<ToggleSwitchArgs> {
 
   @tracked declare isOn: boolean;
 
-  private get _color() { return colorToCssModifier(this.args.color); }
-
   get toggleSwitchSliderStyle() {
-    return `toggle-switch__slider ${this._color}`;
+    return `toggle-switch__slider`;
   }
 
   constructor(owner: unknown, args: ToggleSwitchArgs) {
