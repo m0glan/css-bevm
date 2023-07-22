@@ -4,7 +4,7 @@ $appBarHeight: 53px;
   @include themed() {
     background-color: getThemeValue($primary);
     height: $appBarHeight;
-    padding: 5px 20px;
+    padding: $contentPadding;
     display: flex;
     align-items: center;
 

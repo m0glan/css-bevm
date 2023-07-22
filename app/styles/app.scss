@@ -1,6 +1,7 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 @import '_typescales';
 @import '_colors';
+@import '_layout';
 
 @import 'components/button';
 @import 'components/toggle-switch';

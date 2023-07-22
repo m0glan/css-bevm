@@ -60,14 +60,12 @@ $toggleSwitchWidth: 46px;
 }
 
 input:checked + .toggle-switch__slider {
-  &.-style-default {
-    @include themed() {
+  @include themed() {
+    &.-style-default {
       background-color: getThemeValue($secondary);
     }
-  }
 
-  &.-style-inverted {
-    @include themed() {
+    &.-style-inverted {
       background-color: getThemeValue($bg);
     }
   }

@@ -3,11 +3,24 @@
 <div class="{{this.theme.cssVariant}}">
     <div class="app">
         <AppBar>
-            <Button @variant="contained" @color="danger" @text="Hello" />
-            <ToggleSwitch 
-                @style="default" 
-                @initialState={{this.isDarkTheme}} 
-                @onStateChanged={{this.updateTheme}} />
+            <div class="container -full-width -full-height">
+                <div class="section">
+                    <span class="section__header">Button</span>
+                    <div class="section__body">
+                        <Button @variant="contained" @color="default" @text="Button" />
+                        <Button @variant="contained" @color="danger" @text="Button" />
+                        <Button @variant="outlined" @color="default" @text="Button" />
+                        <Button @variant="outlined" @color="danger" @text="Button" />
+                    </div>
+                </div>
+
+                <div class="section">
+                    <span class="section__header">Toggle Switch</span>
+                    <div class="section__body">
+                        <ToggleSwitch @style="default" />
+                    </div>
+                </div>
+            </div>
         </AppBar>
     </div>
 </div>
