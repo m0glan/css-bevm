@@ -23,6 +23,8 @@
 
   /* modifier definition: -{namespace}-{descriptor} */
 
+  /* color modifiers */
+
   &.-color-primary {
     @include themed() {
       background-color: getThemeValue($primary);
@@ -40,27 +42,27 @@
       background-color: getThemeValue($error);
     }
   }
-}
 
-.btn--contained.-size-medium {
-  font-size: 16px;
-}
+  /* size modifiers */
 
-.btn--contained.-size-large {
-  font-size: 24px;
+  &.-size-medium {
+    font-size: 16px;
+  }
+
+  &.-size-large {
+    font-size: 24px;
+  }
 }
 
 .btn--outlined {
   &:hover {
-    filter: brightness(85%);
+    filter: brightness(95%);
   }
 
   border: 1px solid;
   background-color: transparent;
 
-  &:hover {
-    filter: brightness(95%);
-  }
+  /* color modifiers */
 
   &.-color-primary {
     @include themed() {

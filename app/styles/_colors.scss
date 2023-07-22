@@ -16,6 +16,8 @@ $red200: #e59e9e;
 $black50: #e8eaea;
 $black200: #a1a7aa;
 
+/* themes */
+
 $themes: (
   default: (
     bg: $white200,
@@ -51,10 +53,6 @@ $themes: (
   }
 }
 
-@function getThemeValue($key) {
-  @return map-get($theme-map, $key);
-}
-
 /* theme color keys */
 
 $bg: 'bg';
@@ -64,3 +62,7 @@ $error: 'error';
 $primaryText: 'primaryText';
 $secondaryText: 'secondaryText';
 $buttonText: 'buttonText';
+
+@function getThemeValue($key) {
+  @return map-get($theme-map, $key);
+}
