@@ -17,41 +17,59 @@ $toggleSwitchWidth: 60px;
   height: 0;
 }
 
+@mixin toggleSwitchSliderBefore() {
+  position: absolute;
+  content: "";
+  height: $toggleSwitchSliderHeight;
+  width: $toggleSwitchSliderWidth;
+  left: 4px;
+  bottom: 4px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
 .toggle-switch__slider {
   @include themed() {
     background-color: getThemeValue($disabledOrHint);
-  }
-
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 34px;
-
-  &:before {
-    @include themed() {
-      background-color: getThemeValue($bg);
-    }
-
+    
     position: absolute;
-    content: "";
-    height: $toggleSwitchSliderHeight;
-    width: $toggleSwitchSliderWidth;
-    left: 4px;
-    bottom: 4px;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     -webkit-transition: .4s;
     transition: .4s;
-    border-radius: 50%;
+    border-radius: 34px;
+
+    &.-style-default {
+      &:before {
+        @include toggleSwitchSliderBefore();
+        background-color: getThemeValue($bg);
+      }
+    }
+
+    &.-style-inverted {
+      &:before {
+        @include toggleSwitchSliderBefore();
+        background-color: getThemeValue($secondary);
+      }
+    }
   }
 }
 
 input:checked + .toggle-switch__slider {
-  @include themed() {
-    background-color: getThemeValue($secondary);
+  &.-style-default {
+    @include themed() {
+      background-color: getThemeValue($secondary);
+    }
+  }
+
+  &.-style-inverted {
+    @include themed() {
+      background-color: getThemeValue($bg);
+    }
   }
 }
 

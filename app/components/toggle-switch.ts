@@ -2,8 +2,11 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
+type ToggleSwitchStyle = 'default' | 'inverted'
+
 interface ToggleSwitchArgs {
   initialState?: boolean;
+  style?: ToggleSwitchStyle;
   onStateChanged: (isOn: boolean) => void
 }
 
@@ -13,7 +16,11 @@ export default class ToggleSwitch extends Component<ToggleSwitchArgs> {
   @tracked declare isOn: boolean;
 
   get toggleSwitchSliderStyle() {
-    return `toggle-switch__slider`;
+    if (this.args.style == null) {
+      return 'toggle-switch__slider -style-default';
+    }
+
+    return `toggle-switch__slider -style-${this.args.style}`;
   }
 
   constructor(owner: unknown, args: ToggleSwitchArgs) {
