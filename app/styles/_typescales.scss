@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('./fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: url('./fonts/OpenSans-SemiBold.ttf');
+}
+
+@mixin headline6() {
+  font-family: 'OpenSans-Regular';
+  font-size: 1.25rem;
+  line-height: 1.6em;
+}
+
+@mixin body1() {
+  font-family: 'OpenSans-Regular';
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+
+@mixin body2() {
+  font-family: 'OpenSans-Regular';
+  font-size: 0.875rem;
+  line-height: 1.43em;
+}
+
+@mixin buttonText() {
+  font-family: 'OpenSans-SemiBold';
+  font-size: 0.875rem;
+  line-height: 1.75em;
+}
+
+body * {
+  @include body2();
+}

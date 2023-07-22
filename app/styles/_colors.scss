@@ -1,0 +1,63 @@
+/* light theme colors */
+
+$white200: #f7f8f8;
+$blue500: #007bc1;
+$lightBlue500: #269af4;
+$red500: #ca3c3d;
+$black500: #424e54;
+$gray500: #727e84;
+
+/* dark theme colors */
+
+$darkBlack800: #08090a;
+$blue200: #80bde0;
+$lightBlue200: #80c4f9;
+$red200: #e59e9e;
+$black50: #e8eaea;
+$black200: #a1a7aa;
+
+$themes: (
+  default: (
+    bg: $white200,
+    primary: $blue500,
+    secondary: $lightBlue500,
+    error: $red500,
+    primaryText: $black500,
+    secondaryText: $gray500
+  ),
+  dark: (
+    bg: $darkBlack800,
+    primary: $blue200,
+    secondary: $lightBlue200,
+    error: $red200,
+    primaryText: $black50,
+    secondaryText: $black200
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function getThemeValue($key) {
+  @return map-get($theme-map, $key);
+}
+
+/* theme color keys */
+
+$bg: 'bg';
+$primary: 'primary';
+$secondary: 'secondary';
+$error: 'error';
+$primaryText: 'primaryText';
+$secondaryText: 'secondaryText';
