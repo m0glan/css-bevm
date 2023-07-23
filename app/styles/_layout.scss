@@ -3,11 +3,11 @@ $contentPadding: 10px 20px;
 .container {
   padding: $contentPadding;
 
-  &.-full-width {
+  &.-width-full {
     width: 100vw;
   }
 
-  &.-full-height {
+  &.-height-full {
     height: 100vh;
   } 
 }
